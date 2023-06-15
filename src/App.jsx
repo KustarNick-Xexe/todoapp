@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import '../src/index.css';
+import { v4 as uuid } from 'uuid';
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -25,7 +26,7 @@ function App() {
   const handleNewTodo = (e) => {
     e.preventDefault();
     if (newTodo !== "") {
-      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+      setTodos([...todos, { id: uuid(), text: newTodo, completed: false }]);
       setNewTodo("");
     }
   };
