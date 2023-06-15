@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
+import '../src/index.css';
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -48,15 +49,18 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>TODO</h1>
-      <form onSubmit={handleNewTodo}>
+    <div className='todo-app'>
+      <h1 className='todo-app__header'>TODO</h1>
+      <form className='todo-app__form' onSubmit={handleNewTodo}>
         <input
+          className='todo-app__input'
           placeholder="Новая задача"
           value={newTodo}
           onChange={handleNewTodoChange}
         />
-        <button type="submit">Добавить</button>
+        <button
+          className='todo-app__button'
+          type="submit">Добавить</button>
       </form>
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

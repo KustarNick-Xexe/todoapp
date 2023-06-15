@@ -1,8 +1,9 @@
 import TodoItem from './TodoItem';
+import '../index.css';
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
     return (
-        <div>
+        <div className='todo-list'>
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}

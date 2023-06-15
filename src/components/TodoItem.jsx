@@ -1,9 +1,15 @@
 const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
     return (
-        <div>
-            <input type="checkbox" checked={todo.completed} onChange={toggleTodo} />
-            <span>{todo.text}</span>
-            <button onClick={deleteTodo}>Удалить</button>
+        <div className='todo-item'>
+            <input 
+                className='todo-item__input'
+                id={`checkbox-${todo.text}`}  
+                type="checkbox" 
+                checked={todo.completed} 
+                onChange={toggleTodo} />
+            <label for={`checkbox-${todo.text}`}></label>
+            <span className='todo-item__text'>{todo.text}</span>
+            <button className='todo-item__button' onClick={deleteTodo}>Удалить</button>
         </div>
     );
 };
